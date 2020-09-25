@@ -1,0 +1,41 @@
+<%-include('./partials/headNav')%>
+
+<section id="new-product">
+    <h2>ADD A NEW PRODUCT</h2>
+    <form action="/add" method="POST">
+        <input type="text" name="name" id="" placeholder="Name">
+        <input type="text" name="url" id="" placeholder="Url picture">
+        <input type="text" name="company" id="" placeholder="Company">
+        <input type="text" name="price" id="" placeholder="Price">
+        <textarea name="description" id="" cols="30" rows="10" placeholder="Product description"></textarea>
+        <input class="btn" type="submit" value="Send">
+    </form>
+</section>
+
+<div class="line"></div>
+
+<section id="random">
+    <h1>RANDOM PRODUCT</h1>
+    <div class="random-grid">
+        <% random.forEach(elem => { %>
+        <article>
+            <a href="/details/<%= elem._id %>"><img src=" <%= elem["Product-picture-Link"] %>"
+                    alt="product-photo"></img></a>
+            <div class="caption-wrap">
+                <ul>
+                    <li>
+                        <a href="/details/<%= elem._id %>"><%= elem["Product-name"] %></a>
+                    </li>
+                    <li>
+                        <a class="grey" href="/details/<%= elem._id %>"> <%= elem.Company %></a>
+                    </li>
+                </ul>
+                <h5>$<%= elem.Price %></h5>
+            </div>
+        </article>
+        <% }) %>
+    </div>
+</section>
+</body>
+
+</html>

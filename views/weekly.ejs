@@ -1,0 +1,27 @@
+<%-include('./partials/headNav')%>
+
+<section id="weekly">
+    <h1>WEEKLY RECOMMENDATIONS</h1>
+    <div class="random-grid">
+        <% random.forEach(elem => { %>
+        <article>
+            <a href="/details/<%= elem._id %>"><img src=" <%= elem["Product-picture-Link"] %>"
+                    alt="product-photo"></img></a>
+            <div class="caption-wrap">
+                <ul>
+                    <li>
+                        <a href="/details/<%= elem._id %>"><%= elem["Product-name"] %></a>
+                    </li>
+                    <li>
+                        <a class="grey" href="/details/<%= elem._id %>"> <%= elem.Company %></a>
+                    </li>
+                </ul>
+                <h5>$<%= elem.Price %></h5>
+            </div>
+        </article>
+        <% }) %>
+    </div>
+</section>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<%-include('./partials/headNav')%>
+
+<section id="single-product">
+
+    <article class="details" id="show">
+
+        <div class="caption-wrap">
+
+            <img src="<%= product["Product-picture-Link"] %> " alt="">
+            <div>
+
+                <div class="flex">
+                    <a id="toggle" href="/edit">Edit</a>
+                    <a href="/details/<%= product._id %>/delete">Delete</a>
+                </div>
+                <ul>
+                    <li><%= product["Product-name"] %></li>
+                    <li><%= product.Company %></li>
+                </ul>
+                <h5>$<%= product.Price %></h5>
+                <h3><%=product.Description %></h3>
+                <div>
+                    <a class="buy btn" href="<%= product["Link-shop"] %>">BUY NOW</a>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <div id="edit">
+        <h1>EDIT PRODUCT</h1>
+        <form action="/details/<%= product._id %>/edit" method="POST">
+            <input type="text" name="name" id="" value="<%= product["Product-name"] %>" placeholder="Name">
+            <input type="text" name="url" id="" value="<%= product["Product-picture-Link"] %>"
+                placeholder="Url picture">
+            <input type="text" name="company" id="" value="<%= product.Company %>" placeholder="Company">
+            <input type="text" name="price" id="" value="<%= product.Price %>" placeholder="Price">
+            <textarea name="description" id="" cols="30" rows="10"
+                placeholder="Product description"> <%= product.Description %> </textarea>
+            <input class="btn" type="submit" value="Edit">
+        </form>
+    </div>
+
+    <script>
+        const edit = document.getElementById('edit')
+        const show = document.getElementById('show')
+        const toggleBtn = document.getElementById('toggle')
+
+        edit.classList.add('hide')
+        toggleBtn.addEventListener('click', (e) => {
+            e.preventDefault()
+            edit.classList.toggle('hide')
+            show.classList.toggle('hide')
+        })
+    </script>
+</section>
+</body>
+
+</html>
