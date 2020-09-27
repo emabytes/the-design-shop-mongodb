@@ -146,6 +146,9 @@ textarea {
   display: flex;
   justify-content: center;
 }
+.info-wrap {
+  padding: 0 1.5em;
+}
 .flex a {
   font-size: 0.8em;
   color: grey;
@@ -225,4 +228,7 @@ footer {
   font-size: 1.5em;
   padding-top: 1.5em;
   text-align: center;
+}
+header a:hover, footer a:hover {
+  color: #848484;
 }

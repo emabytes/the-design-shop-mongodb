@@ -1,11 +1,8 @@
 <%-include('./partials/headNav')%>
 
 <section id="single-product">
-
     <article class="details" id="show">
-
         <div class="caption-wrap">
-
             <img src="<%= product["Product-picture-Link"] %> " alt="">
             <div>
 
@@ -13,7 +10,8 @@
                     <a id="toggle" href="/edit">Edit</a>
                     <a href="/details/<%= product._id %>/delete">Delete</a>
                 </div>
-                <ul>
+                <div class="info-wrap">
+                      <ul>
                     <li><%= product["Product-name"] %></li>
                     <li><%= product.Company %></li>
                 </ul>
@@ -22,8 +20,9 @@
                 <div>
                     <a class="buy btn" href="<%= product["Link-shop"] %>">BUY NOW</a>
                 </div>
+                </div>
+    
             </div>
-
         </div>
     </article>
 
@@ -54,6 +53,7 @@
         })
     </script>
 </section>
+<footer>THE DESIGN SHOP</footer>
 </body>
 
 </html>

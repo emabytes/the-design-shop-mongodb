@@ -61,7 +61,6 @@ app.get('/details/:id', (req, res) => {
 
     ProductItem.findById(req.params.id)
         .then(result => {
-            // res.render('details', { product: result })
             res.render('details', { product: result })
         })
         .catch(err => console.log(err))
