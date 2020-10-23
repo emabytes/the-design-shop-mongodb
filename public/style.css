@@ -226,7 +226,7 @@ img:hover {
 footer {
   color: #848484;
   font-size: 1.5em;
-  padding-top: 1.5em;
+  padding: 1.5em 0;
   text-align: center;
 }
 header a:hover, footer a:hover {

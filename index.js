@@ -2,6 +2,7 @@ const express = require('express');
 const app = express()
 const mongoose = require('mongoose');
 const ProductItem = require('./models/productItem');
+const PORT = process.env.PORT || 4000;
 
 app.use(express.static('public'))
 app.use(express.json());
@@ -14,8 +15,8 @@ const dbUri = "mongodb+srv://supercode:supercode@cluster0.2kvja.mongodb.net/supe
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
         console.log("connected to db")
-        app.listen(3131, () => {
-            console.log("server listening at http://localhost:3131")
+        app.listen(PORT, () => {
+            console.log("server listening at http://localhost:4000")
         })
         // .catch(err => console.log(err))
     })
